@@ -1,1 +1,3 @@
-Exercise 2: Modify and merge
+Exercise 2: Modify readme
+
+Modify again
