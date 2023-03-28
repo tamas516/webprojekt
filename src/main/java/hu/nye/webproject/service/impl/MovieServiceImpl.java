@@ -2,6 +2,7 @@ package hu.nye.webproject.service.impl;
 
 import hu.nye.webproject.dto.MovieDTO;
 import hu.nye.webproject.entity.MovieEntity;
+import hu.nye.webproject.exception.MovieNotFoundException;
 import hu.nye.webproject.repository.MovieRepository;
 import hu.nye.webproject.service.MovieService;
 import org.modelmapper.ModelMapper;
@@ -60,5 +61,35 @@ public class MovieServiceImpl implements MovieService {
     MovieEntity savedMovie = movieRepository.save(movieEntity);
 
     return modelMapper.map(savedMovie,MovieDTO.class);
+  }
+
+  @Override
+  public MovieDTO update(MovieDTO movieDTO) {
+
+   Long id = movieDTO.getId();
+
+   boolean existById = movieRepository.existsById(id);
+
+   if(existById){
+     MovieEntity movieToSave = modelMapper.map(movieDTO,MovieEntity.class);
+     MovieEntity savedMovie = movieRepository.save(movieToSave);
+     return modelMapper.map(savedMovie,MovieDTO.class);
+   } else {
+     throw new MovieNotFoundException("Movie not found with id "+id);
+   }
+
+  }
+
+  @Override
+  public void delete(Long id) {
+    Optional<MovieEntity> optionalMovie = movieRepository.findById(id);
+
+    if(optionalMovie.isPresent()){
+      movieRepository.delete(optionalMovie.get());
+    } else {
+        throw new MovieNotFoundException("Movie not found with id "+id);
+    }
+
+
   }
 }
