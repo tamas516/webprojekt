@@ -1,0 +1,8 @@
+hu\nye\webproject\Main.class
+hu\nye\webproject\config\UtilConfig.class
+hu\nye\webproject\service\impl\MovieServiceImpl.class
+hu\nye\webproject\controller\MovieController.class
+hu\nye\webproject\dto\MovieDTO.class
+hu\nye\webproject\service\MovieService.class
+hu\nye\webproject\repository\MovieRepository.class
+hu\nye\webproject\entity\MovieEntity.class
