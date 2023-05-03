@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb0970c9-4e48-4bf5-8fe3-7bf2a115b7ce" name="Changes" comment="Implementing the Maven project - 1.">
+    <list default="true" id="cb0970c9-4e48-4bf5-8fe3-7bf2a115b7ce" name="Changes" comment="Implementing the Maven project - 2.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/nye/webproject/controller/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/nye/webproject/controller/MovieController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/nye/webproject/dto/MovieDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/nye/webproject/dto/MovieDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/nye/webproject/service/MovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/nye/webproject/service/MovieService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/nye/webproject/service/impl/MovieServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/nye/webproject/service/impl/MovieServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="impl_1" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -41,7 +37,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../szakdoga/dms" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -81,7 +77,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680034365889</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Implementing the Maven project - 2.">
+      <created>1680038435936</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1680038435936</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -99,6 +102,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Modifying Readme" />
     <MESSAGE value="Implementing the Maven project - 1." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementing the Maven project - 1." />
+    <MESSAGE value="Implementing the Maven project - 2." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementing the Maven project - 2." />
   </component>
 </project>
