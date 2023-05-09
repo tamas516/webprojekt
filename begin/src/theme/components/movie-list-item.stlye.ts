@@ -1,7 +1,7 @@
 import { ComponentMultiStyleConfig } from "@chakra-ui/react";
 
 export const MovieListItem: ComponentMultiStyleConfig = {
-  parts: ["description", "header", "releaseDate"],
+  parts: ["description", "header", "menu", "releaseDate"],
   baseStyle: {
     description: {
       justifyContent: "space-between",
@@ -12,6 +12,16 @@ export const MovieListItem: ComponentMultiStyleConfig = {
       flexDirection: "column",
       flexGrow: 1,
       gap: 2,
+    },
+    menu: {
+      position: "absolute",
+      right: 4,
+      top: 4,
+      visibility: "hidden",
+
+      _groupHover: {
+        visibility: "visible",
+      },
     },
     releaseDate: {
       alignSelf: "flex-start",

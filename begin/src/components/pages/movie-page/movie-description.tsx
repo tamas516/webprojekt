@@ -11,6 +11,7 @@ import {
   useMultiStyleConfig,
 } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
+import { Link as NavLink } from "react-router-dom";
 
 import { NetflixRouletteLogo } from "../../../atoms";
 import { Movie } from "../../../model";
@@ -38,7 +39,7 @@ export const MovieDescription: VFC<MovieDescriptionProps> = ({ movie }) => {
     >
       <Flex justifyContent="space-between" marginBottom={8}>
         <NetflixRouletteLogo />
-        <Link href="/" sx={style.homeLink}>
+        <Link as={NavLink} to="/" sx={style.homeLink}>
           <SearchIcon />
         </Link>
       </Flex>
@@ -52,7 +53,7 @@ export const MovieDescription: VFC<MovieDescriptionProps> = ({ movie }) => {
               <Heading sx={style.title}>{movie.title}</Heading>
               <Rating rate={movie.vote_average} />
             </HStack>
-            {movie.tagLine && <Text>{movie.tagLine}</Text>}
+            {movie.tagline && <Text>{movie.tagline}</Text>}
           </Box>
           <HStack
             as="time"

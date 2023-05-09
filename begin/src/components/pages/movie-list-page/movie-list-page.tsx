@@ -1,19 +1,36 @@
-import React, { VFC, useMemo, useState } from "react";
+import React, { VFC, useState } from "react";
 import { Box, Divider, Flex, Skeleton } from "@chakra-ui/react";
 
-import { Movie, MovieSortType, RawMovie } from "../../../model";
-import { movieFactory } from "../../../utils/movie-factory";
-import allMovies from "../../../data/movies.json";
+import { MovieSortType } from "../../../model";
 import { GenreList } from "./genre-list";
 import { MovieCounter } from "./movie-counter";
 import { MovieList } from "./movie-list";
 import { SortMovies } from "./sort-movies";
 import { useMovies } from "../../../store/hooks/use-movies";
 
+const getSortingParams = (sorting: MovieSortType) => {
+  if (sorting === MovieSortType.RELEASE_DATE) {
+    return {
+      sortOrder: "desc",
+      sortBy: "release_date",
+    };
+  } else if (sorting === MovieSortType.RATING) {
+    return {
+      sortOrder: "desc",
+      sortBy: "vote_average",
+    }
+  }
+  return {
+    sortOrder: "asc",
+    sortBy: "title",
+  };
+};
+
 export const MovieListPage: VFC = () => {
 
   const [sorting, setSorting] = useState(MovieSortType.RELEASE_DATE);
-  const { isLoading, movies, totalAmount} = useMovies({
+  const { isLoading, movies, totalAmount } = useMovies({
+    ...getSortingParams(sorting),
     limit: 6,
   });
 
@@ -35,8 +52,8 @@ export const MovieListPage: VFC = () => {
       </Flex>
       <Divider height="2px" bgColor="gray.600" borderBottomColor="gray.1000" zIndex={1} position="relative" />
       <Skeleton isLoaded={!isLoading}>
-      <MovieCounter moviesFound={totalAmount} />
-      <MovieList movies={movies} />
+        <MovieCounter moviesFound={totalAmount} />
+        <MovieList movies={movies} />
       </Skeleton>
     </Box>
   );

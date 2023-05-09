@@ -3,5 +3,5 @@ export const transparentize = (color: string, alphaPercentage: number ) => {
     throw new Error(`Invalid transparent value: ${alphaPercentage}`);
   }
   const hexValue = Math.round(255 * alphaPercentage / 100).toString(16);
-  return `${color}${hexValue}`;
+  return `${color}${hexValue.length < 2 ? "0" : ""}${hexValue}`;
 };

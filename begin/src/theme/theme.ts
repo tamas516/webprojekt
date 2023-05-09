@@ -26,6 +26,7 @@ const colors = {
 const colorTokens = {
   background: {
     default: colors.gray["500"],
+    hover: colors.red["500"],
     medium: colors.gray["600"],
     dark: colors.gray["900"]
   },
@@ -48,9 +49,12 @@ const colorTokens = {
     },
     input: {
       background: {
-        default: transparentize(colors.gray["700"], 80),
-      }
-    }
+        default: transparentize(colors.gray["700"], 94.8),
+        dark: transparentize(colors.gray["700"], 80),
+      },
+      dropdown: transparentize(colors.gray["900"], 91.81),
+      placeholder: transparentize(chakraTheme.colors.white, 30),
+    },
   },
 };
 

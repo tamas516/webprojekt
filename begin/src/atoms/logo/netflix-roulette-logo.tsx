@@ -4,7 +4,7 @@ import { Link as NavLink } from "react-router-dom";
 
 export const NetflixRouletteLogo: VFC<HeadingProps> = (props) => (
   <Link
-  as={NavLink}
+    as={NavLink}
     to="/"
     _hover={{
       textDecoration: "none"

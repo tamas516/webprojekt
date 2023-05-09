@@ -3,7 +3,7 @@ import { Genre } from "./genre";
 export interface Movie {
   id?: number;
   title: string;
-  tagLine?: string;
+  tagline?: string;
   vote_average?: number;
   vote_count?: number;
   release_date: Date;

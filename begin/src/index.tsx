@@ -16,9 +16,9 @@ ReactDOM.render(
     <ColorModeScript />
     <ChakraProvider theme={theme}>
       <Provider store={store}>
-      <BrowserRouter>
-      <App />
-      </BrowserRouter>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
       </Provider>
     </ChakraProvider>
   </React.StrictMode>,

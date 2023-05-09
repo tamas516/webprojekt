@@ -5,32 +5,33 @@ import { GetMoviesQueryParams, moviesApi, useGetMoviesQuery } from "../movies/mo
 import { selectSearchText } from "../movies/search.slice";
 
 export const useMovies = (query: GetMoviesQueryParams) => {
-    const searchQuery = useSelector(selectSearchText);
-    const queryParams = {
-        ...query,
-    };
-    if (searchQuery) {
-        queryParams.search = searchQuery;
-        queryParams.searchBy = "title";
-    }
+  const searchQuery = useSelector(selectSearchText);
+  const queryParams = {
+    ...query,
+  };
 
-    const {isLoading, isFetching, error} = useGetMoviesQuery(queryParams);
+  if (searchQuery) {
+    queryParams.search = searchQuery;
+    queryParams.searchBy = "title";
+  }
 
-    let totalAmount = 0;
-    let movies: Movie[] = [];
+  const { isLoading, isFetching, error } = useGetMoviesQuery(queryParams);
+  const select = moviesApi.endpoints.getMovies.select(queryParams);
+  const { data } = useSelector(select);
 
-    const select = moviesApi.endpoints.getMovies.select(queryParams);
-    const { data } = useSelector(select);
+  let totalAmount = 0;
+  let movies: Movie[] = [];
 
-    if(data) {
-        totalAmount = data.totalAmount;
-        movies = data.data.map(movieFactory);
-    }
+  if (data) {
+    totalAmount = data.totalAmount;
+    movies = data.data.map(movieFactory);
+  }
 
-    return {
-        isLoading: isLoading || (isFetching),
-        error,
-        movies,
-        totalAmount,
-    };
+  return {
+    isLoading: isLoading || (!data && isFetching),
+    isFetching,
+    error,
+    movies,
+    totalAmount,
+  };
 };

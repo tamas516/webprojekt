@@ -3,7 +3,7 @@ import { Box, Button, Flex, Heading, Input } from "@chakra-ui/react";
 import { useHeaderSearch } from "./use-header-search";
 
 export const HeaderSearch: VFC = () => {
-  const { searchQuery, onChange, onSubmit } = useHeaderSearch();
+  const {searchQuery, onChange, onSubmit} = useHeaderSearch();
 
   return (
     <Box width="80%" marginX="auto">
